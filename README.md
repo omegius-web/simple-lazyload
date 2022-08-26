@@ -13,8 +13,8 @@
     imageObserver.init();
     
     // Добавляем отслеживание для определенного блока
-    const instagramObserver = new owSimpleLazyload();
-    instagramObserver.IO.observe(document.querySelector('#instagram'));
+  const instagramObserver = new owSimpleLazyload();
+  instagramObserver.custom(['#instagram', '#instagram1']);
 })();
 ```
 
