@@ -1,5 +1,6 @@
 /**
  * Simple Lazyload
+ * @version 1.0.0
  * @link https://github.com/omegius-web/simple-lazyload
  */
 (function(w, d){
@@ -47,15 +48,13 @@
       entries.forEach((entry) => {
 
         if (entry.isIntersecting && entry.target.dataset[this.attribute]) {
-
-          if (entry.target.tagName.match(/div|a|span/i)) {
-
+          const tagName = entry.target.tagName;
+          if (tagName === 'DIV' || tagName === 'A' || tagName === 'SPAN') {
             entry.target.style.backgroundImage =
               'url("' +
               entry.target.dataset[this.attribute].replace(/,/, '"),url("') +
               '")';
-          } else if (entry.target.tagName.match(/img/i)){
-
+          } else if (tagName === 'IMG' || tagName === 'IFRAME' || tagName === 'VIDEO'){
             if (entry.target.parentNode.tagName.match(/picture/i)) {
               this.source(entry.target.parentNode.querySelectorAll('source'));
             }
