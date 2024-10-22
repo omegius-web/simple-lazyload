@@ -2,20 +2,37 @@
 
 ## Инициализация
 
+### IIFE
+```html
+<script src="/path-to-plugin/owSimpleLazyload.life.js"></script>
+```
+
 ```js
 (function(){
-    class owSimpleLazyload{
-      //compress code............
-    }
-        
     // Инициализируем общую отложенную загрузку для изображений
     const imageObserver = new owSimpleLazyload();
     imageObserver.init();
     
     // Добавляем отслеживание для определенного блока
-  const instagramObserver = new owSimpleLazyload();
-  instagramObserver.custom(['#instagram', '#instagram1']);
+    const instagramObserver = new owSimpleLazyload();
+    instagramObserver.custom(['#instagram', '#instagram1']);
 })();
+```
+
+### module
+
+```html
+<script type="module" src="/path-to-plugin/plugin-init.js"></script>
+```
+
+```js
+import { owSimpleLazyload } from './owSimpleLazyload.module.js';
+
+(function() {
+  const imageObserver = new owSimpleLazyload();
+
+  imageObserver.init();
+})()
 ```
 
 ### callback
@@ -31,11 +48,11 @@ const instagramObserver = new owSimpleLazyload((el) => console.log(el));
 < img >
 
 ```html
-<img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" data-lazyload="/images/01.webp" >
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" data-owlazyload="/images/01.webp" >
 ```
 
 Если используется **background-image**
 
 ```html
-<a href="#" data-lazyload="/images/01.webp" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=')"></a>
+<a href="#" data-owlazyload="/images/01.webp" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=')"></a>
 ```
