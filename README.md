@@ -4,7 +4,7 @@
 
 ### IIFE
 ```html
-<script src="/path-to-plugin/owSimpleLazyload.life.js"></script>
+<script src="/path-to-plugin/owSimpleLazyload.min.js"></script>
 ```
 
 ```js
@@ -19,14 +19,14 @@
 })();
 ```
 
-### module
+### ESM
 
 ```html
 <script type="module" src="/path-to-plugin/plugin-init.js"></script>
 ```
 
 ```js
-import { owSimpleLazyload } from './owSimpleLazyload.module.js';
+import { owSimpleLazyload } from './owSimpleLazyload.esm.min.js';
 
 (function() {
   const imageObserver = new owSimpleLazyload();
