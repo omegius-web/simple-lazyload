@@ -3,7 +3,7 @@
  * @version 1.0.0
  * @link https://github.com/omegius-web/simple-lazyload
  */
-export class owSimpleLazyload {
+export default class owSimpleLazyload {
   constructor(callback, observer = {}) {
     this.attribute = 'owlazyload';
     this.IO = new IntersectionObserver(this.common.bind(this, callback), observer);
